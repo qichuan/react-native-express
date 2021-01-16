@@ -1,0 +1,55 @@
+---
+title: 导入和导出
+---
+
+import defaultImport from '../../../../examples/files/javascript/defaultImport'
+import namedImports from '../../../../examples/files/javascript/namedImports'
+import namedExports from '../../../../examples/files/javascript/namedExports'
+import momentExample from '../../../../examples/files/javascript/momentExample'
+import { moment } from '../../../../examples/modules'
+
+## 语法
+使用 `import` 关键字将其他 JavaScript 文件里定义的值，通过相对路径的方式导入到当前文件里。
+使用 `export` 关键字把当前文件里定义的值导出，供其他文件使用。
+
+<Example
+  width={0}
+  height={300}
+  files={{
+    'index.js': defaultImport,
+    'myNumber.js': `export default 42\n`,
+  }}
+/>
+
+---
+
+## 命名导入和导出
+
+一个文件里可以导出多个值，而这些导出值的子集可以同时被导入到其他文件中。
+
+<Example
+  width={0}
+  height={300}
+  files={{
+    'index.js': namedImports,
+    'myValues.js': namedExports,
+  }}
+/>
+
+---
+
+## 从模块导入
+
+导入三方库的语法更精炼：只需要使用 `node_modules` 里模块文件夹的名称即可。(同时也是该模块包在 `npm` 注册表的名称)。
+
+通常三方库会在 `package.json` 文件里定义一个叫 `index.js` 的主文件来提供给集成方引入。举个例子，当我们要引入 `node_modules` 里已经下载好的 `moment` 三方库时，语法上只需要引入 `'moment'` 即可使用 `'./node_modules/moment/index.js'`里的内容。
+
+> 请注意: 导入目录路径的时候，通常也会导入该目录下的 `index.js`文件。 因此，不管是使用 `./myDirectory`，还是用 `./myDirectory/index.js` 导入，效果是一样的。
+
+<Example
+  title="Importing a library"
+  width={0}
+  height={300}
+  code={momentExample}
+  vendorComponents={[moment]}
+/>

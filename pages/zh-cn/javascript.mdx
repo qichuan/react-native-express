@@ -1,0 +1,41 @@
+---
+title: JavaScript
+---
+
+传统的手机应用开发模式需要开发者使用不同的语言（如 Swift 和 Kotlin）为 iOS 安卓这两个端分别开发应用。在 React Native 的开发模式下，开发者只需要使用 JavaScript 写一套代码就可以实现多端投放。React Native 框架提供了一个 JavaScript 桥接器，让开发者能使用 JavaScript API 来访问原生资源，比如相机。
+
+---
+
+## JavaScript 引擎
+
+JavaScript 代码运行在 JavaScript 引擎（也叫转译器）里。iOS 端使用的是和 Safari 浏览器一样的开源 JSC，而安卓端除了 JSC 外，还可以使用 Facebook 开发的 Hermes 新引擎。
+
+每个 JavaScript 引擎，甚至在同一引擎的不同版本，支持的 Javascript 语言特性都有少许不同。比如 iOS 12 的 JSC 就可能无法支持 iOS 13 或 14 里的 JSC 的语言特性，更不用说像 Hermes 一个完全不同的引擎。
+
+**Babel** 工具正是为了解决这个复杂问题而孕育而生。
+
+---
+
+## Babel
+
+Babel 是一个高度可配置的编译器，让我们可以在旧的 JavaScript 引擎上也可以使用新的语言特性和扩展（如 JSX），实现向下兼容。这从根本上抹除 JSC 版本之间或 JSC 与 Hermes 之间的任何差异，让我们在编写代码的时候不需要担忧 JavaScript 引擎兼容性问题。
+
+当我们初始化一个新的 React Native 应用时，工具会自动创建一个 `babel.config.js` 配置文件。使用该文件所包含 React Native 项目所需的 Babel 预制配置，应该能让 JavaScript 代码在任何引擎上都正常工作。
+
+---
+
+## TypeScript
+
+JavaScript 是一个__动态__类型的语言，在运行期间才去做数据类型检查。这样的灵活性可能对小型项目带来方便，但是对于大项目来说，在编译阶段进行类型检查会更有帮助。因此，许多 React Native 开发者都会使用 TypeScript 语言来进行研发。TypeScript 编译器使用类似 Babel 的方式，把的 TypeScript 代码“向下”编译成 JavaScript 代码。React Native 和 Expo 都已经官方支持 TypeScript，并提供相应的模版给开发者使用。
+
+TypeScript 在 JavaScript 的基础上，增加了类型声明和注释相关语法。这样 TypeScript 编译器就能在编译时进行类型检查，检查通过后再把 TypeScript 代码转换成 JavaScript。
+
+本指南使用的主要语言还是 JavaScript，我也会为感兴趣的人在一些示例中添加相关的 TypeScript 类型。
+
+> 如果你主要从事 Web 开发，没有使用过 TypeScript，我建议你使用 JavaScript 来开发你的第一个 React Native 应用。如果你的背景是 iOS 或安卓开发，你可能会觉得使用 TypeScript 会更舒适些。
+
+---
+
+### 接下来
+
+让我们先复习一些关键的 JavaScript 语言新特性，学习一下 JSX 语言扩展，然后就可以正式开始 React 开发了。

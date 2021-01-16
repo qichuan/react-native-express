@@ -1,0 +1,28 @@
+---
+title: 块作用域变量声明
+---
+
+import variables from '../../../../examples/files/javascript/variables.js'
+import constants from '../../../../examples/files/javascript/constants.js'
+
+# `let` 和 `const`
+
+我们用 `let` 声明变量，用 `const` 声明常量。
+
+> 避免使用 `var` 来声明变量，除非是要维护旧版本的代码
+
+<Example
+  width={0}
+  title={'Declaring variables and constants'}
+  code={variables}
+/>
+
+---
+
+## 常量里的可变值
+
+用 `const` 声明的常量名会永久绑定到作用域中，常量的值是无法（通过重新赋值）改变的，也不能被重新声明。
+
+但是，如果常量的值是一个对象，那么这个对象依然可变。
+
+<Example width={0} title={'Constants with mutable values'} code={constants} />
