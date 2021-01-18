@@ -5,29 +5,28 @@ title: JSX
 import jsx from '../../../examples/files/jsx.js'
 import jsxChildren from '../../../examples/files/jsxChildren.js'
 
-## What is JSX?
+## 什么是 JSX？
 
-JSX is an extension to the JavaScript language that adds a new kind of _expression_, the **JSX expression**<Details>, used to create React elements (which we'll cover soon)</Details>.
+JSX 是 JavaScript 语言的一个扩展，它增加了一个新的 **JSX 表达式**，<Details>用来创建 React 元素</Details>。
 
-JSX expressions are a concise syntax for calling the API, `React.createElement(type, props, ...children)`.
 
-We can use JSX expressions anywhere we could use any other expression, e.g. in a `return` statement or variable assignment.
+JSX表达式是 `React.createElement(type, props, ...children)` API 的简洁语法，我们可以在任何可使用表达式的地方使用 JSX，如 `return` 语句或变量赋值。
 
 ---
 
-## Type
+## 类型
 
-Like XML, each JSX expression has a tag, e.g. `<View />`, which is then transformed into a call to `React.createElement(View)`. In this case, `View` is the **type** of the element.
+和 XML 一样，JSX 是用标签来表示的。例如 `<View />` 这个标签会被转化成 `React.createElement(View)`， 用来创建一个类型为 `View` 的元素。
 
 <Example panes={['editor', 'transpiler']} code={`const element = <View />`} />
 
-> On the right in the example above, we can see how our JSX expressions are compiled by babel.
+> 点击上述示例的右栏，你可以看到 JSX 表达式是如何被 Babel 转换为 JavaSript 代码。
 
 ---
 
-## Props
+## Props 参数
 
-Any JSX _attributes_ become **props** (parameters) of the React element. The value of an attribute can be a string, like `foo="hello"`, or it can be any JavaScript expression when wrapped in curly braces, as in `bar={baz}` (which would set the value of the `bar` prop to `baz`).
+JSX 里的属性都将成为 React 元素的 **props** 参数。属性的数据类型可以为字符串，如 `foo="hello"，也可以是任何用大括号括起来的 JavaScript 表达式，例如在 `bar = {baz}` 中，会将 `bar` 属性的值设置为 `baz`。
 
 <Example
   panes={['editor', 'transpiler']}
@@ -36,26 +35,25 @@ Any JSX _attributes_ become **props** (parameters) of the React element. The val
 
 ---
 
-## Children
-
-Any children elements should go between the opening tag, `<View>`, and closing tag `</View>`. Elements without children can use a self-closing tag, like `<View />`, as a shorthand.
+## 子元素
+任何子元素都应该位于开始标签 `<View>` 和结束标签 `</View>` 之间。如果没有子元素的话，可以使用自闭标签如 `<View />` 让代码更简练。
 
 <Example panes={['editor', 'transpiler']} code={jsx} />
 
-> When a JSX element wraps to multiple lines, we often write it with parentheses around it, since it looks nicer.
+> 在分行展示 JSX 的使用，一般会加上括号来增加可读性。
 
 ---
 
-## Interpolation
+## 插值
 
-Children are generally other elements, but can also be any other kind of expression if wrapped in curly braces, `{ ... }`.
+我们也可以用插值的方式（用大括号来包含表达式，如 `{...}`）来加入子元素。
 
 <Example panes={['editor', 'transpiler']} code={jsxChildren} />
 
 ---
 
-## Why JSX?
+## 为什么使用 JSX？
 
-The XML-like syntax is typically more concise, easier to read, and visually looks a little like the generated UI (both are tree-like).
+类似 XML 的语法让代码更简洁易读，而且其树状结构在外观上和生成的 UI 类似。
 
-We don't _have to_ use JSX, but there are few disadvantages, so we almost always use it.
+React 并不强制要求使用 JSX， 但不用它的弊大于利，因此大多数人还是会选择使用它。
