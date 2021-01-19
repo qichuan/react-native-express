@@ -1,3 +1,15 @@
 {
-  "order": ["environment", "javascript"]
+  "order": [
+    "environment",
+    "javascript",
+    "react",
+    "core_components",
+    "app",
+    "component_libraries",
+    "data_management",
+    "persistence",
+    "networking",
+    "animation",
+    "gestures"
+  ]
 }

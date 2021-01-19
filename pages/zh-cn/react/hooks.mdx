@@ -1,0 +1,18 @@
+Hooks are specially-implemented functions that let us add functionality to React components beyond just creating and returning React elements.
+
+We'll look at the following built-in hooks in more detail:
+
+- **`useState`** - Persist state within a component function
+- **`useReducer`** - Similar to useState, but for state that involves multiple sub-values
+- **`useEffect`** - Perform side effects within our component functions
+- **`useRef`** - Wrap a mutable value
+
+We can also compose built-in hooks to build our own.
+
+---
+
+## Rules and Linting
+
+Hooks aren't regular functions; they have to be written in a certain way. To dive deeper into this topic, check out [Rules of Hooks](https://reactjs.org/docs/hooks-rules.html).
+
+When using hooks, we typically want to use [`eslint`](https://eslint.org/) and the `react-hooks` plugin. Hooks are powerful, but can be unintuitive at first, and this tool catches _a lot_ of mistakes before we ever run our code. The Rules of Hooks link has more detail on how to install this.
