@@ -2,21 +2,19 @@ import reactElements from '../../../examples/files/react/reactElements.js'
 
 ## `createElement`
 
-We instantiate **React elements** using the `React.createElement` API.<Details> Typically, we call this API using JSX elements, but it's also possible to call it directly.</Details>
+<Details>一般来说我们会使用 JSX 语法来创建 **React 元素**</Details>，但你也可以直接调用 `React.createElement` API 来实例化一个 React 元素。
 
-The function signature is: `createElement(type, props, children)`.
+这个方法的签名为：`createElement(type, props, children)`。
 
 ---
 
-## Element tree
+## 元素树
 
-Let's take a quick peek at the internals of a React element tree. <Details>The exact
-details of the element tree aren't important to understand right now, but it's
-useful to get the _gist_ of how React works.</Details>
+接下来我们简单看看 React 元素树内部有什么，<Details>虽然这并不是 React 的必修课，但是粗略了解一下还是有些帮助的。</Details>
 
-In this example, we instantiate a few React components using JSX and then print their value to the console.
+在下面的示例中，我们使用 JSX 实例化了一些 React 组件，然后将其值打印到控制台。
 
-> If you click the line of text in the console on the right, you can navigate the tree of JavaScript objects.
+> 你可以点击右侧控制台来查看 JavaScript 对象树。
 
 <Example
   code={reactElements}
@@ -43,11 +41,10 @@ In this example, we instantiate a few React components using JSX and then print 
 
 ---
 
-## Element internals
+## 元素内部
 
-A React element is a JavaScript object containing at least a `type` and `props`.
+从上面示例的控制台里可以看到，一个 React 元素是一个至少包含 `type` 和 `props` 两个属性的 JavaScript 对象。
+- `type` 是一个渲染 UI 元素的函数
+- `props` 是一个可以包含任意属性的对象，里面有例子里的 `foo` 属性，和包含嵌套的 React 元素的 `children` 属性。<Details> `children` 属性有些特殊，因为它是从代码中的嵌套 JSX 元素自动创建的。</ Details>
 
-- The `type` is a function representing what UI element to render.
-- The `props` object may contain arbitrary properties, e.g. `foo`, plus a `children` property containing nested React elements.<Details> The `children` property is somewhat special, since it's created automatically from the nested JSX elements in our code.</Details>
-
-The `ref` and `key` aren't props... we'll come back to those.
+`ref` 和 `key` 并不属于 props，我们会在后续章节里详细解释。
