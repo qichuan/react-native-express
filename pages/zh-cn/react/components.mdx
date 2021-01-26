@@ -4,25 +4,23 @@ title: 组件
 
 import functionComponent from '../../../examples/files/react/functionComponent.js'
 
-## What are components?
+## 什么是组件？
 
-React **components** are the reusable building blocks we use to create the user interface of our app.
+React **组件** 是用来创建 UI 的可复用构建块，也是 React 元素的`类型`。
 
-Components are the `type` of the React element.
+除了使用内置组件，如：`View`, `Text`, 和 `Button`。我们也可以创建自定义组件。
 
-We've already seen a few built-in components: `View`, `Text`, and `Button`. We can also define custom components.
-
-> This is analagous to classes and instances. `View` is like a class, while `React.createElement(View)` instantiates the class.
+> 组件和元素的关系有点像 OOP 里的类和实例。如果把 `View` 组件当成类来看的话，那么调用 `React.createElement(View)` 就是创建一个实例（元素）。
 
 ---
 
-## Defining components
+## 定义组件
 
-There are 2 ways we can define a React component:
+我们可以通过两种方式定义 React 组件：
 
-- **Function components** - A function that takes parameters (called `props`) as input, and returns a React element
-- **Class components** - A `class` that extends `React.Component` and implements a `render` method
+- **函数组件** - 以参数（`props`）为输入并返回 React 元素的函数
+- **类组件** - 继承 `React.Component` 并实现 `render` 函数的类
 
-> Lets take a look at each way we can define a React component.
+> 接下来我们分别看看定义 React 组件的这两种方式。
 >
-> The function component API is the one we should use for new code, and the one we'll focus on. The class component API is older, but you'll definitely still see it in examples online.
+> 函数组件 API 是推荐的 React 组件定义方式，也是我们介绍的重点。在一些较旧的文档教程里，你还是看到类组件 API 的使用示例。
