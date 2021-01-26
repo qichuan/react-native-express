@@ -6,12 +6,12 @@ import classComponent from '../../../../examples/files/react/classComponent.js'
 
 ## `React.Component`
 
-We can also create components by subclassing `React.Component` and overriding the `render()` method.
+类组件是通过继承 `React.Component` 并实现 `render` 函数的方式创建的。
 
-Props are accessible as `this.props`.
+Props 属性可以通过 `this.props` 方式访问。
 
-> There are additional methods for hooking into the component rendering lifecycle.
+> 类组件还提供组件生命周期事件和监听方式。
 >
-> However, this API can become significantly more complex, without providing major benefits, so it's best to use function components if you're not maintaining legacy code.
+> 但是监听生命周期会增加代码的复杂度。除非你在维护旧代码，最好还是使用函数组件。
 
 <Example code={classComponent} />
