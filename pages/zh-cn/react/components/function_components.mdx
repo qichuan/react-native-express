@@ -7,38 +7,38 @@ import composingComponents from '../../../../examples/files/react/composingCompo
 import componentBehaviors from '../../../../examples/files/react/componentBehaviors.js'
 import typescriptTypes from '../../../../examples/files/react/typescriptTypes.tsx'
 
-## Minimal example
+## 最小示例
 
-A function component is a function that returns a React element.
+函数组件就是一个返回 React 元素的函数。
 
 <Example code={functionComponent} />
 
 ---
 
-## Composing components
+## 组合组件
 
-We can use custom components like `MyComponent` in the same way as built-in ones like `View`. We use props to communicate between components.
+我们可以像使用内置组件（如`View`）一样使用自定义组件 `MyComponent`。组件之间通过 props 进行通信。
 
 <Example code={composingComponents} />
 
 ---
 
-## TypeScript types
+## TypeScript 类型
 
-We typically create a `Props` type.
+如果你的项目使用 TypeScript 的话，通常会为 `Props` 定义一个类型
 
-> We typically don't set the type of the return value, since it can generally be inferred and doesn't provide much useful type safety.
+> 一般来说，我们无需设置函数组件返回值的类型。由于编译器可以自行推断，就算设置了也不会对类型安全性有更多帮助。
 >
-> For more detail: https://github.com/typescript-cheatsheets/react-typescript-cheatsheet#function-components
+> 更多详情请参阅：https://github.com/typescript-cheatsheets/react-typescript-cheatsheet#function-components
 
 <Example code={typescriptTypes} />
 
 ---
 
-## Component behaviors
+## 组件行为
 
-We use **hooks** to add functionality to function components. Hooks are specially implemented functions that typically start with the prefix `use`.
+我们使用 **hook** 向函数组件添加功能。 hook 是特殊的函数，通常以前缀 `use` 开头。
 
-> React provides ~10 built-in hooks, but we can also build our own. We'll talk much more about hooks later.
+> React 内置十多个 hook 函数，你也可以根据需求创建自定义 hook 函数。hook 的使用细节会在后续的章节讨论。
 
 <Example code={componentBehaviors} />
