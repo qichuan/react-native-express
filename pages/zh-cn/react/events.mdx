@@ -1,7 +1,11 @@
+---
+title: 事件响应
+---
+
 import nativeEvent from '../../../examples/files/react/nativeEvent.js'
 import customEvent from '../../../examples/files/react/customEvent.js'
 
-Some components trigger events/callbacks in response to user input. To add an event handler, pass a function as a prop to a React element:
+一些组件会响应用户行为，并触发回调事件。事件处理逻辑函数可以过 Prop 属性的方式传入至 React 元素：
 
 <Example
   code={nativeEvent}
@@ -14,8 +18,8 @@ Some components trigger events/callbacks in response to user input. To add an ev
 
 ---
 
-## Custom Events
+## 自定义事件
 
-Suppose we want to make a custom `CounterButton` component with an `onIncrement` callback. <Details>We can pass this prop into the `onPress` of a Button.</Details>
+假设我们要自定义一个包含 `onIncrement` 回调函数的 `CounterButton` 组件，<Details>我们可以把这个回调函数传入到按键元素的 `onPress` 属性。</Details>
 
 <Example code={customEvent} />
