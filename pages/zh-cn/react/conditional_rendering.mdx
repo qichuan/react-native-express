@@ -18,7 +18,7 @@ React 在这方面的灵活度很高，在每次调用函数组件的时候都�
 
 ## React 节点
 
-从函数组件返回的不局限于 React 元素，以下的数据类型都有效：
+从函数组件返回的数据不局限于 React 元素，以下的数据类型都有效：
 
 - React 元素
 - `false`, `null`, 或者 `undefined` （什么都不渲染）
@@ -29,38 +29,32 @@ React 在这方面的灵活度很高，在每次调用函数组件的时候都�
 
 ---
 
-## Rendering with `&&`
+## 渲染时使用 `&&` 运算符
 
-One of the most common cases: conditionally rendering a React element based on whether a specific `prop` is true or not. <Details>In this example, we'll render a Card component that takes a `title` prop and optionally a `showButton` prop. We only want to render a `Button` for the subtitle if it exists.</Details>
-
-> The same technique works with `||` too.
+一个最常见的例子：根据对应属性值的条件来渲染或跳过元素。<Details>在下面的例子里，Card 组件有 `title` 和 `showButton`（可选）这两个属性。该组件里的 `Button` 元素只会在 `showButton` 为 true 的情况下渲染。</Details>
 
 <Example code={shortCircuitAnd} />
 
 ---
 
-## Rendering with ternary `?`
+## 渲染时使用 `?` 三元运算符
 
-Another common case: rendering a different React element for when a `prop` exists and when it doesn't. <Details>We can accomplish this with the ternary operator.</Details>
+另一个常见的例子：<Details>使用三元运算符</Details>为对应属性值在条件达成，和不达成两种情况下分别渲染不同的元素。
 
-> Note that a buttonTitle equal to the empty string, `""`, won't render, since the empty string is a falsy value. If we did want it to, we could use `buttonTitle === undefined` to check for that case.
+> 请注意一个点，由于空字符串 `""` 的条件判断值为 false, 如果 buttonTitle 是空字符串话，Button 元素是不会渲染的。 如果你想在 Button 显示空字符串的话，请使用 `butonTitle === undefined` 判断条件。
 
 <Example code={ternaryEvaluation} />
 
 ---
 
-## Rendering with `if/else`
+## 渲染时使用 `if/else`
 
-For more complex rendering, we can introduce variables to store our React elements, letting us combine them in different ways.<Details> Let's take a look at an example where the rendering is substantially different based on whether or not the `loading` and `error` props exist.</Details>
+在复杂的渲染场景里，我们可以使用变量来存储元素。<Details>在这个范例中，通过判断 `loading`，`error` 这两个属性是否存在来渲染不同的元素。</Details>
 
 <Example code={complexRendering} />
 
 ---
 
-## Managing complexity
+## 管理复杂性
 
-Rendering in React is powerful because the logic can be as simple or complex as we need it to be.
-
-However, as rendering complexity grows, the code can start to become unmanageable.
-
-**Consider breaking down complex components into smaller, simpler ones for a more maintainable code base.**
+React 提供了强大的机制来渲染简单或复杂的 UI。但随着复杂性的增加，代码可能会变得难以管理。**建议把复杂的组件拆分成若干小组件，这样更好管理。**
