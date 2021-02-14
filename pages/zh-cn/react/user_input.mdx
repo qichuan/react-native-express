@@ -1,15 +1,19 @@
+---
+title: 用户输入
+---
+
 import userInput from '../../../examples/files/react/userInput.js'
 
-In React, most input components are stateless. An input component typically has a `value` prop and a prop prefixed with `onChange`, and together these things give us complete control over the input without ever having to access the native UI imperatively.
+React 里大部分的输入组件都是无状态的。输入组件的属性通常包括一个 `value`，和一个以 `onChange` 为前缀的回调函数。我们可以使用这两个属性来操控输入组件，且无需直接访问底层的 UI 实现。
 
 ---
 
-## Input field
+## 输入栏
 
-Here's an example of a text input field.
+我们来看看一个文字输入栏的案例。
 
-We introduce a **state variable**, `text`, to store the current value of the input field. We pass `text` into the `TextInput` as the `value` prop, and any time `onChangeText` is called, we update call `setText` to update our state variable.
+`text` 是一个**状态变量**，用来存储输入栏的当前值。我们把 `text` 作为 `value` 传入到 `TextInput` 中，每当 `onChangeText` 被调用时，使用 `setText` 来更新状态变量。
 
-> We use the [useState](/react/hooks/usestate) hook to store the text value. We'll cover this soon.
+> 我们使用 [useState](/react/hooks/usestate) hook 来存储文字值，在后续章节里我们会详细介绍 hook。
 
 <Example code={userInput} />
